@@ -1,0 +1,28 @@
+import java.util.Scanner;
+interface Function<T,R>
+{
+    R apply(T t);
+}
+class MovieCostCategories
+{
+    public static void main(String[] args)
+    {
+        Function<Integer,String> s=(n)->
+        {
+            if(n<=16)
+            {
+                return "Children Entry Movie Cost is:50";
+            }else if(n>16&&n<=55)
+                {
+                    return "Adult Entry Movie Cost is 200";
+                }
+                else{
+                    return "Free Entry Movie Cost";
+                }
+        };
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the Age");
+        int age=sc.nextInt();
+        System.out.println(s.apply(age));
+    }
+}
